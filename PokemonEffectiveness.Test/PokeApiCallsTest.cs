@@ -16,5 +16,15 @@ namespace PokemonEffectiveness.Test
             var val = await PokemonEffectiveness.PokeApiCalls.returnTypeByPokemonName(value);
             Assert.IsInstanceOfType(val, typeof(string), "Error - Expected String, got " + val.GetType());
         }
+
+        [TestMethod]
+        [DataRow("fire")]
+        [DataRow("poison")]
+        [DataRow("psychic")]
+        public async Task Test_returnType_returnDamageRelationsByTypeName(string value)
+        {
+            var val = await PokemonEffectiveness.PokeApiCalls.returnDamageRelationsByTypeName(value);
+            Assert.IsInstanceOfType(val, typeof(JToken), "Error - Expected JToken, got " + val.GetType());
+        }
     }
 }
