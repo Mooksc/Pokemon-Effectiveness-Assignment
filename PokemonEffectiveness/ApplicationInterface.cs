@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json.Linq;
 
 namespace PokemonEffectiveness
 {
@@ -14,6 +15,27 @@ namespace PokemonEffectiveness
         {
             Console.Write("Pokemon: ");
             return Console.ReadLine();
+        }
+
+        public static void presentResponse(string pokemonName, string pokemonType, JToken damage_relations)
+        {
+            Console.WriteLine("\nPokemon: " + pokemonName);
+            Console.WriteLine("Type: " + pokemonType + "\n");
+            try
+            {
+                foreach (var key in JObject.FromObject(damage_relations))
+                {
+                    Console.WriteLine("\n" + key.Key + " :" + "\n");
+                    foreach (var v in key.Value)
+                    {
+                        Console.WriteLine(v["name"]);
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error);
+            }
         }
     }
 }
