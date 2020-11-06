@@ -1,4 +1,6 @@
-﻿namespace PokemonEffectiveness
+﻿using System;
+
+namespace PokemonEffectiveness
 {
     class Program
     {
@@ -18,6 +20,9 @@
 
             // Present query, pokemon type and damage_relation response to console
             ApplicationInterface.presentResponse(query, pokemonType, damage_relations);
+
+            // Leave application open until user presses any key
+            Console.ReadKey();
         }
     }
 }
