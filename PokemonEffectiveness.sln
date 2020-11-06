@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1267
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonEffectiveness", "PokemonEffectiveness\PokemonEffectiveness.csproj", "{366A400A-E266-432C-879A-E380D7EBB885}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonEffectiveness.Test", "PokemonEffectiveness.Test\PokemonEffectiveness.Test.csproj", "{C61E94C7-1700-4D4F-8E72-D11357A58A78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{366A400A-E266-432C-879A-E380D7EBB885}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{366A400A-E266-432C-879A-E380D7EBB885}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{366A400A-E266-432C-879A-E380D7EBB885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61E94C7-1700-4D4F-8E72-D11357A58A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61E94C7-1700-4D4F-8E72-D11357A58A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61E94C7-1700-4D4F-8E72-D11357A58A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61E94C7-1700-4D4F-8E72-D11357A58A78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
