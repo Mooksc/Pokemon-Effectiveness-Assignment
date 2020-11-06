@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationInterface.cs" />
     <Compile Include="PokeApiCalls.cs" />
     <Compile Include="PokeApiGlobals.cs" />
     <Compile Include="Program.cs" />
