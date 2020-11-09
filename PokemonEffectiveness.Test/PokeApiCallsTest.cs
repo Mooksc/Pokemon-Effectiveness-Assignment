@@ -9,8 +9,8 @@ namespace PokemonEffectiveness.Test
     {
         [DataTestMethod]
         [DataRow("charmander")]
-        [DataRow("koffing")]
-        [DataRow("steelix")]
+        [DataRow("Koffing")]
+        [DataRow("STEELIX")]
         public async Task Test_returnType_returnTypeByPokemonName(string value)
         {
             var val = await PokemonEffectiveness.PokeApiCalls.returnTypeByPokemonName(value);
