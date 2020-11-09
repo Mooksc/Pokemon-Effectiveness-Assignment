@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace PokemonEffectiveness
 {
@@ -14,11 +15,14 @@ namespace PokemonEffectiveness
             while (t)
             {
                 string query = ApplicationInterface.userQueryPrompt();
-                // Pass user query to returnTypeByPokemonName method
-                if(query == "QUIT")
+
+                // Check user query for an exit prompt
+                if (PokeApiGlobals.exitTerms.Any(query.ToUpper().Contains))
                 {
                     t = false;
                 }
+
+                // Pass user query to returnTypeByPokemonName method
                 string pokemonType = PokeApiCalls.returnTypeByPokemonName(query).GetAwaiter().GetResult();
                 if(pokemonType != PokeApiGlobals.nameError)
                 {
@@ -28,8 +32,6 @@ namespace PokemonEffectiveness
                     // Present query, pokemon type and damage_relation response to console
                     ApplicationInterface.presentResponse(query, pokemonType, damage_relations);
                 }
-                // Leave application open until user presses any key
-                //Console.ReadKey();
             } 
         }
     }
