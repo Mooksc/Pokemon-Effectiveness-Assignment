@@ -7,7 +7,7 @@ namespace PokemonEffectiveness
     {
         public static async Task<string> returnTypeByPokemonName(string pokemonName)
         {
-            var response = await PokeApiGlobals.returnApiCall("pokemon/" + pokemonName);
+            var response = await PokeApiGlobals.returnApiCall("pokemon/" + pokemonName.ToLower());
             return response["types"][0]["type"]["name"].ToObject<string>();
         }
 
