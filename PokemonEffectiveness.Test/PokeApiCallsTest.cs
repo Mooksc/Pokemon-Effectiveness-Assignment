@@ -8,7 +8,7 @@ namespace PokemonEffectiveness.Test
     public class PokeApiCallsTest
     {
         [DataTestMethod]
-        [DataRow("charmander")]
+        [DataRow("squirtle")]
         [DataRow("Koffing")]
         [DataRow("STEELIX")]
         public async Task Test_returnType_returnTypeByPokemonName(string value)
