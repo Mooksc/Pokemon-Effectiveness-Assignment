@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
 namespace PokemonEffectiveness
@@ -7,8 +8,16 @@ namespace PokemonEffectiveness
     {
         public static async Task<string> returnTypeByPokemonName(string pokemonName)
         {
-            var response = await PokeApiGlobals.returnApiCall("pokemon/" + pokemonName.ToLower());
-            return response["types"][0]["type"]["name"].ToObject<string>();
+            try
+            {
+                var response = await PokeApiGlobals.returnApiCall("pokemon/" + pokemonName.ToLower());
+                return response["types"][0]["type"]["name"].ToObject<string>();
+            } catch
+            {
+                Console.WriteLine(PokeApiGlobals.nameError);
+                return PokeApiGlobals.nameError;
+            }
+            
         }
 
         public static async Task<JToken> returnDamageRelationsByTypeName(string type)

@@ -1,6 +1,7 @@
 ﻿using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace PokemonEffectiveness
 {
@@ -8,6 +9,7 @@ namespace PokemonEffectiveness
     {
         public static readonly HttpClient httpClient = new HttpClient();
         public static string PokeApiURL = "https://pokeapi.co/api/v2/";
+        public static string nameError = "Please Enter a Valid Pokemon Name!";
 
         public static async Task<JObject> returnApiCall(string query)
         {
