@@ -17,6 +17,16 @@ namespace PokemonEffectiveness
             return Console.ReadLine();
         }
 
+        public static void exitInfo()
+        {
+            Console.Write("Type 'EXIT' or 'QUIT' and press enter to close application");
+        }
+
+        public static void exitMessaging()
+        {
+            Console.Write("Closing Application... Gotta Catch em' All!");
+        }
+
         public static void presentResponse(string pokemonName, string pokemonType, JToken damage_relations)
         {
             Console.WriteLine("\nPokemon: " + pokemonName);
