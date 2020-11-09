@@ -13,7 +13,7 @@ namespace PokemonEffectiveness
 
         public static string userQueryPrompt()
         {
-            Console.Write("Pokemon: ");
+            Console.Write("\nPokemon: ");
             return Console.ReadLine();
         }
 
