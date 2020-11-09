@@ -14,11 +14,13 @@ namespace PokemonEffectiveness
             bool t = true;
             while (t)
             {
+                ApplicationInterface.exitInfo();
                 string query = ApplicationInterface.userQueryPrompt();
 
                 // Check user query for an exit prompt
                 if (PokeApiGlobals.exitTerms.Any(query.ToUpper().Contains))
                 {
+                    ApplicationInterface.exitMessaging();
                     t = false;
                 }
 
