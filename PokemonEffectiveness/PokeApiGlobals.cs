@@ -11,6 +11,7 @@ namespace PokemonEffectiveness
         public static string PokeApiURL = "https://pokeapi.co/api/v2/";
         public static string nameError = "Please Enter a Valid Pokemon Name!";
         public static List<string> exitTerms = new List<string> { "QUIT", "EXIT", "Q", "CLOSE" };
+        public static bool keepAlive = true;
 
         public static async Task<JObject> returnApiCall(string query)
         {
