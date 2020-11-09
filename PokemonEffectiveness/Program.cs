@@ -10,19 +10,27 @@ namespace PokemonEffectiveness
             ApplicationInterface.titleInterface();
 
             // Store user query as variable
-            string query = ApplicationInterface.userQueryPrompt();
+            bool t = true;
+            while (t)
+            {
+                string query = ApplicationInterface.userQueryPrompt();
+                // Pass user query to returnTypeByPokemonName method
+                if(query == "QUIT")
+                {
+                    t = false;
+                }
+                string pokemonType = PokeApiCalls.returnTypeByPokemonName(query).GetAwaiter().GetResult();
+                if(pokemonType != PokeApiGlobals.nameError)
+                {
+                    // Pass returnTypeByPokemonName return value to returnDamageRelationsByTypeName
+                    var damage_relations = PokeApiCalls.returnDamageRelationsByTypeName(pokemonType).GetAwaiter().GetResult();
 
-            // Pass user query to returnTypeByPokemonName method
-            string pokemonType = PokeApiCalls.returnTypeByPokemonName(query).GetAwaiter().GetResult();
-
-            // Pass returnTypeByPokemonName return value to returnDamageRelationsByTypeName
-            var damage_relations = PokeApiCalls.returnDamageRelationsByTypeName(pokemonType).GetAwaiter().GetResult();
-
-            // Present query, pokemon type and damage_relation response to console
-            ApplicationInterface.presentResponse(query, pokemonType, damage_relations);
-
-            // Leave application open until user presses any key
-            Console.ReadKey();
+                    // Present query, pokemon type and damage_relation response to console
+                    ApplicationInterface.presentResponse(query, pokemonType, damage_relations);
+                }
+                // Leave application open until user presses any key
+                //Console.ReadKey();
+            } 
         }
     }
 }
