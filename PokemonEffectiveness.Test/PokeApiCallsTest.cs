@@ -17,6 +17,16 @@ namespace PokemonEffectiveness.Test
             Assert.IsInstanceOfType(val, typeof(string), "Error - Expected String, got " + val.GetType());
         }
 
+        [DataTestMethod]
+        [DataRow("this_is_invalid")]
+        [DataRow("ccharmander")]
+        [DataRow("1234567890-=")]
+        public async Task NegativeTest_returnValue_returnTypeByPokemonName(string value)
+        {
+            var val = await PokemonEffectiveness.PokeApiCalls.returnTypeByPokemonName(value);
+            Assert.AreEqual(val, PokeApiGlobals.nameError);
+        }
+
         [TestMethod]
         [DataRow("fire")]
         [DataRow("poison")]
